@@ -1,0 +1,16 @@
+div.about-contacts {
+    margin: auto;
+    width: 130px;
+}
+div.about-contacts a{
+    color: #517397;
+    font-weight: bold;
+}
+
+div.how {
+    background: url('/images/how.jpg') no-repeat;
+    width: 576px;
+    height: 178px;
+    margin-left: -10px;
+    margin-top: 15px;
+}

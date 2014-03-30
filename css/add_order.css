@@ -1,0 +1,27 @@
+#add-order-form {
+    
+}
+
+#add-order-form label{
+    width: 150px; float: left;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 6px;
+    font-weight: normal;
+}
+
+#add-order-form span.required{
+    display: none;
+}
+
+#add-order-form #submit-button{
+    margin-left: 210px;
+}
+
+h2.add-order {
+    margin-left: 210px;
+}
+
+.addorder-margin-top {
+    margin-top: 8px !important;
+}

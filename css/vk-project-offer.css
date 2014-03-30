@@ -1,0 +1,61 @@
+div.offer-box{
+    width: 510px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+div.offer-head {
+    padding-top:3px;
+    padding-left: 7px;
+    padding-bottom: 3px;
+    background-color: #BFCFFF;
+    margin-bottom: 5px;
+}
+
+div.offer-date {
+    float: right;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+div.offer-shop-user-name {
+    width: 450px;
+}
+
+div.offer-text {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}
+
+div.comment-box{
+    width: 490px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+div.comment-head {
+    padding-top:3px;
+    padding-left: 7px;
+    padding-bottom: 3px;
+    background-color: #F5F7F8;
+    margin-bottom: 5px;
+}
+
+div.comment-date {
+    float: right;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+div.comment-user-name {
+    width: 370px;
+}
+
+div.comment-text {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}

@@ -1,0 +1,7 @@
+AddHandler application/x-httpd-php-ex php
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php

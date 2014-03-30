@@ -1,0 +1,73 @@
+.showedContacts {
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dae1e8;
+}
+
+.contactInfo {
+    margin-bottom: 10px;
+}
+
+div.project-container {
+        
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dae1e8;
+}
+
+div.project-title {
+    
+    font-size: 12pt;
+    color: #517296;
+}
+
+div.project-date {
+    font-size: 10px;
+    float: right;
+    margin-bottom: 3px;
+}
+
+div.project-describe {
+    clear: both;
+    border: 1px solid #ebeff2;
+    background-color: #f5f7f8;
+    padding: 10px 40px 10px 10px;
+    color: #4a4a4a;
+    margin-top: 10px;
+}
+
+div.project-offers {
+    margin-top: 5px;
+    font-size: 10pt; 
+    font-weight: bold;
+}
+
+div.project-response {
+    margin-top: 5px;
+    
+}
+
+span.project-response {
+    font-size: 10pt;
+    color: #060;
+    font-weight: bold;
+}
+
+div.project-author {
+    clear: both;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+div.showContactsForm input {
+    width: 250px;
+}
+
+div.showContactsForm textarea {
+    width: 250px;
+    height: 120px;
+}
+
+div.addComment {
+    padding-left: 20px;
+}

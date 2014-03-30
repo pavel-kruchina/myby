@@ -1,0 +1,42 @@
+div.project-container {
+        
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    max-height: 130px;
+    border-bottom: 2px solid #dae1e8;
+}
+
+div.project-describe {
+    clear: both;
+    border: 1px solid #ebeff2;
+    background-color: #f5f7f8;
+    padding: 10px 40px 10px 10px;
+    color: #4a4a4a;
+    margin-top: 10px;
+    max-height: 50px;
+}
+
+.no-limits {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.backButton {
+    color: #517397;
+    float: left;
+    padding-top: 7px;
+    padding-left: 13px;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.ui-dialog-titlebar {
+    text-align: center !important;
+}
+
+.ui-dialog-title {
+    float: none !important;
+}

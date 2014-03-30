@@ -1,0 +1,24 @@
+#projectsNavigation {
+    text-align: center;
+    font-size: 12pt;
+}
+
+#projectsNavigation .backward{ 
+    width: 9px;
+    height: 17px;
+    background: url('/images/pageLeft.png');
+    display: inline-block;
+    margin-top: 5px;
+    position: relative;
+    top: 2px;
+}
+
+#projectsNavigation .forward{ 
+    width: 9px;
+    height: 17px;
+    background: url('/images/pageRight.png');
+    display: inline-block;
+    margin-top: 5px;
+    position: relative;
+    top: 2px;
+}
