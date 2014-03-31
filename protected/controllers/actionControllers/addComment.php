@@ -24,6 +24,8 @@ class addComment extends Controller
         self::saveToDB($form);
         self::sendMailToManager($vars);
         
+        $form->text = '';
+        
         return true;
     }
     

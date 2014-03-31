@@ -69,7 +69,7 @@ class ShopmanagerController extends Controller
         $data['page'] = $page;
         $data['pages'] = \helpers\Paginator::getPageList($data['projects']['count'], $page, OFFERS_ON_PAGE);
         
-        $this->render('index', $data);
+        $this->render('mylist', $data);
     }
     
     public function actionLogin() {

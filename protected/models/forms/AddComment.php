@@ -29,6 +29,7 @@ class AddComment extends ExtendedForm
     protected function getFixRules() {
         return array(
             array('text', 'cleanTag'),
+            array('text', 'magicTags'),
         );
     }
 
