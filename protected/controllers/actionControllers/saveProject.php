@@ -13,7 +13,7 @@ class saveProject extends Controller
         }
         
         if (self::validateAndSave($_POST['models_forms_AddProject'], $form)) {
-            //Mailer::sendToAllActiveManagers('Добавлен новый заказ "'.$form->title.'"- <a href="http://myby.com.ua/shopmanager">перейти на сайт</a>', 'Новый проект на сайте MyBy');
+            Mailer::sendToAllActiveManagers('Добавлен новый заказ "'.$form->title.'"- <a href="http://myby.com.ua/shopmanager">перейти на сайт</a>', 'Новый проект на сайте MyBy');
             
             return true;
         }
