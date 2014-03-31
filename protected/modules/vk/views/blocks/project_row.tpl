@@ -6,5 +6,6 @@
         <a href="{Yii::app()->request->baseUrl}/vk/project/{$project->id}">
                 Смотреть предложения ({if $offersCount[$project->id]}{$offersCount[$project->id]->offersCount}{else}0{/if})
         </a>
+        {if $project->deleted=='yes'}<span style="float: right; font-weight: bold">Заказ не актуален</span>{/if}
     </div>
 </div>

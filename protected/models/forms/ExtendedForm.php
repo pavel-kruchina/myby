@@ -30,4 +30,11 @@ class ExtendedForm extends CFormModel
 	{
         return strip_tags($attribute);
 	}
+    
+    protected function magicTags($value) {
+        $value=str_replace("\n", '<br>', $value);
+        $value=preg_replace("#(https?|ftp)://\S+[^\s.,> )\];'\"!?]#",'<a class="thisPage" target="_blank" href="\\0">\\0</a>',$value);
+        
+        return $value;
+    }
 }

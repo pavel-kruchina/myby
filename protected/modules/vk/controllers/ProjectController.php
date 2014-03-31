@@ -26,6 +26,8 @@ class ProjectController extends Controller
     public function actionIndex()
 	{
         $id = (int)$_GET['id'];
+        $this->checkDelete($id);
+        
         
         $data = $this->collectDataForProjectPage($id);
         if (!$data)
@@ -33,6 +35,19 @@ class ProjectController extends Controller
         $this->render('project', $data);
 	}
     
+    protected function checkDelete($id) {
+        if(!isset($_GET['delete']))
+            return false;
+        
+        $project = Project::getActiveById($id);
+        
+        if ($project->user_id != Yii::app()->user->getId())
+            return false;
+        
+        $project->deleted = 'yes';
+        $project->save();
+    }
+
     protected function collectDataForProjectPage($project_id) {
         $data = array();
         

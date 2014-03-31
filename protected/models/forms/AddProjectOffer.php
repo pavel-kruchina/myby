@@ -29,6 +29,7 @@ class AddProjectOffer extends ExtendedForm
     protected function getFixRules() {
         return array(
             array('offer', 'cleanTag'),
+            array('offer', 'magicTags'),
         );
     }
 

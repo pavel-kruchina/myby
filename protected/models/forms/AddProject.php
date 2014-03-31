@@ -31,6 +31,7 @@ class AddProject extends ExtendedForm
     protected function getFixRules() {
         return array(
             array('title, describe', 'cleanTag'),
+            array('describe', 'magicTags'),
         );
     }
 

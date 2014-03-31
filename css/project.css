@@ -34,6 +34,7 @@ div.project-describe {
     padding: 10px 40px 10px 10px;
     color: #4a4a4a;
     margin-top: 10px;
+    overflow: hidden;
 }
 
 div.project-offers {
