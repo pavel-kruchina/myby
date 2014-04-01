@@ -62,6 +62,8 @@
             return false;
         }
         
+        $("#submit-button").prop('disabled', true);
+        
         return true;
     }
     
