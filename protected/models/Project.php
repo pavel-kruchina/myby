@@ -17,7 +17,7 @@ define('OFFERS_ON_PAGE_FEW', 2);
 class Project extends BaseModel
 {
     
-    static public function getActiveRecords() {
+    static public function getActiveRecords($page=0) {
         $criteria = new CDbCriteria();
         $criteria->addColumnCondition(array('active'=>1));
         $criteria->order = 'id desc';

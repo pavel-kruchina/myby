@@ -34,6 +34,7 @@ return array(
 
 	'modules'=>array(
 		'vk'=>array(),
+        'shopmanager'=>array(),
         
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
@@ -62,6 +63,11 @@ return array(
                 'vk/index/<page:\d+>'=>'vk',
                 'vk/index'=>'vk',
                 'vk/mylist/<page:\d+>'=>'vk/mylist',
+                
+                'shopmanager/index/<page:\d+>'=>'shopmanager',
+                'shopmanager/index'=>'shopmanager',
+                'shopmanager/myoffers/<page:\d+>'=>'shopmanager/myoffers',
+                
                 
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

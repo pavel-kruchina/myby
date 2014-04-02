@@ -1,7 +1,8 @@
 <?php
 
-class AboutController extends Controller
+class LogoutController extends Controller
 {
+    
     public function filters()
     {
         return array(
@@ -22,9 +23,11 @@ class AboutController extends Controller
             ),
         );
     }
-    
+       
     public function actionIndex()
 	{
-        $this->render('about', array());
+        Yii::app()->user->logout();
+		Yii::app()->request->redirect('/shopmanager/');
 	}
+    
 }

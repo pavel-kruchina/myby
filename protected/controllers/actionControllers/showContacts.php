@@ -32,12 +32,13 @@ class showContacts extends Controller
         $project = \Project::getActiveById($vars['project_id']);
         
         $text = "Пользователь <b>@name</b> открыл вам контакты: <br /><b>телефон</b>: @phone, <b>почта</b>:@mail, <a href='http://vk.com/id@vkid'>профиль вконтакте</a>
-            <br /> в ответ на ваше предложение на заказ <b><@project></b>";
+            <br /> в ответ на ваше предложение на заказ <a href='http://myby.com.ua/shopmanager/project/@pid'><b><@project></b></a>";
         $text = str_replace('@name', $userInfo->name.' '.$userInfo->sname, $text);
         $text = str_replace('@vkid', $userInfo->viewer_id, $text);
         $text = str_replace('@phone', $vars['phone'], $text);
         $text = str_replace('@mail', $vars['email'], $text);
         $text = str_replace('@project', $project->title, $text);
+        $text = str_replace('@pid', $project->id, $text);
         
         return $text;
     }

@@ -12,8 +12,8 @@ class saveProject extends Controller
             return false;
         }
         
-        if (self::validateAndSave($_POST['models_forms_AddProject'], $form)) {
-            Mailer::sendToAllActiveManagers('Добавлен новый заказ "'.$form->title.'"- <a href="http://myby.com.ua/shopmanager">перейти на сайт</a>', 'Новый проект на сайте MyBy');
+        if ($project_id = self::validateAndSave($_POST['models_forms_AddProject'], $form)) {
+            Mailer::sendToAllActiveManagers('Добавлен новый заказ "'.$form->title.'"- <a href="http://myby.com.ua/shopmanager/project/'.$project_id.'">перейти к заказу</a>', 'Новый проект на сайте MyBy');
             
             return true;
         }
@@ -39,7 +39,7 @@ class saveProject extends Controller
         $project->active = 1;
         
         $project->save();
-        return true;
+        return $project->id;
     }
     
 }

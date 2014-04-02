@@ -43,9 +43,10 @@ class addComment extends Controller
     protected static function createText($vars, \Offer $offer) {
         $userInfo = \Yii::app()->user->getUserData();
         
-        $text = "Пользователь <b>@name</b> ответил на ваше предложение <<@offer>>";
+        $text = "Пользователь <b>@name</b> ответил на ваше предложение <<@offer>>. <br /> <a href='http://myby.com.ua/shopmanager/project/@project'>Перейти к заказу</a> ";
         $text = str_replace('@name', $userInfo->name.' '.$userInfo->sname, $text);
         $text = str_replace('@offer', $offer->text, $text);
+        $text = str_replace('@project', $offer->project_id, $text);
         
         return $text;
     }

@@ -12,7 +12,7 @@
      <div class="showedContacts">
          <h2>Пользователи, с которыми нужно связаться</h2>
          {foreach from=$showedContacts item=contact}
-             {include file='shopmanager/blocks/client.tpl'}
+             {include file='application.modules.shopmanager.views.blocks.client'}
          {/foreach}
      </div>
      {/if}

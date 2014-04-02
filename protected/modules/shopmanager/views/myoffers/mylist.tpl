@@ -1,10 +1,10 @@
 {extends file="layouts/manager.tpl"}
 
 {block name="content"}
-    <h2>Список активных заказов</h2>
+    <h2>Мои предложения</h2>
     <div id="projectsContainer">
         {foreach from=$projects.records item=project}
-         {include file='shopmanager/blocks/projectShortView.tpl'}
+            {include file='application.modules.shopmanager.views.blocks.projectShortView'}
         {/foreach}
     </div>
         
