@@ -7,7 +7,7 @@
         <div class="project-describe">{$project->describe}</div>
         <div class="project-author">От пользователя: <b>{$author->name} {$author->sname}</b></div>
      </div>
-        
+     {if $project->deleted=='yes'}<span style=" font-weight: bold">Заказ закрыт</span>{/if}
      {if $openUsers}
      <div class="showedContacts">
          <h2>Пользователи, с которыми нужно связаться</h2>

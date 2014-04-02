@@ -3,7 +3,7 @@
 namespace helpers;
 
 class Date {
-    protected static $timeZone = 2;
+    protected static $timeZone = 1;
     
     public static function getCurrent() {
         return self::unixToDbDate(time() - self::$timeZone*3600);

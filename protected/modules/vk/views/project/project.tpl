@@ -13,7 +13,7 @@
         {if $author->id == Yii::app()->user->getId() && $project->deleted=='no'}
             <a class="thisPage" style="float: right" href="{Yii::app()->request->baseUrl}/vk/project/{$project->id}/?delete=1" onclick="return confirm('Вы точно хотите закрыть этот заказ?')">Закрыть заказ</a>
         {/if}
-        {if $project->deleted=='yes'}<span style="float: right; font-weight: bold">Заказ не актуален</span>{/if}
+        {if $project->deleted=='yes'}<span style="float: right; font-weight: bold">Заказ закрыт</span>{/if}
         </div>
         
      </div>

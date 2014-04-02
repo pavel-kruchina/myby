@@ -61,6 +61,6 @@
 
 </div><!-- page -->
 <div class="loading hidden"></div>
-<a href="{Yii::app()->request->baseUrl}/vk/contacts"><div id="askButton"></div></a>
+<a target="_blank" class="thisPage" href="http://vk.com/myby4every1"><div id="askButton"></div></a>
 </body>
 </html>
