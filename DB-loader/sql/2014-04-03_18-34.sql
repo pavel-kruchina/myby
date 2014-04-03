@@ -1,4 +1,4 @@
-CREATE TABLE `vsevrtes_main`.`event`(		  
+CREATE TABLE `event`(		  
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100),
   `create_date` DATETIME,
