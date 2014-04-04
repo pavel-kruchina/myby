@@ -13,7 +13,9 @@ class saveProject extends Controller
         }
         
         if ($project_id = self::validateAndSave($_POST['models_forms_AddProject'], $form)) {
-            Mailer::sendToAllActiveManagers('Добавлен новый заказ "'.$form->title.'"- <a href="http://myby.com.ua/shopmanager/project/'.$project_id.'">перейти к заказу</a>', 'Новый проект на сайте MyBy');
+            $event = new \models\events\AddProjectEvent();
+            $event->project_id = $project_id;
+            $event->create();
             
             return true;
         }
