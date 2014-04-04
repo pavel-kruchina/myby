@@ -24,6 +24,8 @@ class addOffer extends Controller
         self::saveToDB($form, $project_id);
         self::sendNotification($project_id);
         
+        $form->offer = '';
+        
         return true;
     }
     

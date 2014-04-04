@@ -43,7 +43,9 @@ class ProjectController extends Controller
             return false;
         
         $data['add'] = new models\forms\AddProjectOffer();
-        \actionControllers\addOffer::checkOfferSend($data['add'], $data['project']->id);
+        if(\actionControllers\addOffer::checkOfferSend($data['add'], $data['project']->id)) {
+            $data['added'] = true;
+        }
         $data['author'] = User::getById($data['project']->user_id);
         $data['offers'] = Offer::getOffersForProject($data['project']->id);
         $data['comments'] = Comment::getCommentsForOffers($data['offers']);

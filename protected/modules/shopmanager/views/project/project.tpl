@@ -17,6 +17,10 @@
      </div>
      {/if}
      
+     {if $added}
+         <div class="message">Спасибо за ваше предложение!</div>
+     {/if}
+     
     <div class="form add-offer-form">
 
         {form name="form" id='add-order-form' enableAjaxValidation=false}
