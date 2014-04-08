@@ -120,4 +120,12 @@ class Comment extends CActiveRecord
         
         return static::model()->findAll($criteria);
     }
+    
+    
+    /**
+     * @return Comment 
+     */
+    public static function getById($id) {
+        return self::model()->findByPk($id);
+    }
 }

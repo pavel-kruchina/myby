@@ -2,9 +2,7 @@
 header('P3P: CP="NOI ADM DEV COM NAV OUR STP"');
 setlocale(LC_TIME, 'UA');
 
-define('ROLE_ADMIN', 'admin');
-define('ROLE_MODER', 'moderator');
-define('ROLE_USER', 'user');
+include('constants.php');
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');

@@ -21,19 +21,18 @@ class addOffer extends Controller
             return false;
         }
         
-        self::saveToDB($form, $project_id);
-        self::sendNotification($project_id);
+        $offer = self::saveToDB($form, $project_id);
+        self::sendNotification($offer);
         
         $form->offer = '';
         
         return true;
     }
     
-    protected static function sendNotification($project_id) {
-        $project = \Project::getActiveById($project_id);
-        $user = \User::getById($project->user_id);
-        
-        \vendor\vk\vk::sendNotification($user->viewer_id, "По Вашему заказу <".$project->title."> есть новые предложения");
+    protected static function sendNotification(\Offer $offer) {
+        $event = new \models\events\AddOfferEvent();
+        $event->offer_id = $offer->id;
+        $event->create();
         
         return true;
     }
@@ -46,7 +45,7 @@ class addOffer extends Controller
         $offer->project_id = $project_id;
         
         $offer->save();
-        return true;
+        return $offer;
     }
     
 }

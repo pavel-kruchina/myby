@@ -21,34 +21,19 @@ class addComment extends Controller
             return false;
         }
         
-        self::saveToDB($form);
-        self::sendMailToManager($vars);
+        $comment = self::saveToDB($form);
+        self::setEvent($comment);
         
         $form->text = '';
         
         return true;
     }
     
-    protected static function sendMailToManager($vars) {
+    protected static function setEvent(\Comment $comment) {
         
-        $offer = \Offer::getById($vars['offer_id']);
-        $manager = \ShopUserModel::getById($offer->shop_user_id);
-        $mail = $manager->mail;
-        $topic = 'Пользователь ответил на ваше предложение';
-        $text = self::createText($vars, $offer);
-        
-        Mailer::send($text, $topic, $mail);
-    }
-    
-    protected static function createText($vars, \Offer $offer) {
-        $userInfo = \Yii::app()->user->getUserData();
-        
-        $text = "Пользователь <b>@name</b> ответил на ваше предложение <<@offer>>. <br /> <a href='http://myby.com.ua/shopmanager/project/@project'>Перейти к заказу</a> ";
-        $text = str_replace('@name', $userInfo->name.' '.$userInfo->sname, $text);
-        $text = str_replace('@offer', $offer->text, $text);
-        $text = str_replace('@project', $offer->project_id, $text);
-        
-        return $text;
+        $event = new \models\events\AddCommentEvent();
+        $event->comment_id = $comment->id;
+        $event->create();
     }
     
     protected static function saveToDB(\models\forms\AddComment $form) {
@@ -63,7 +48,7 @@ class addComment extends Controller
         
         $comment->save();
         
-        return true;
+        return $comment;
     }
     
 }

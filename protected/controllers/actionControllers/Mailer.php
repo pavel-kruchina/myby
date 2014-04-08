@@ -5,8 +5,8 @@ use \Yii;
 
 class Mailer
 {
-	public static function send($text, $topic, $email) {
-        $mail = self::confMail();
+	public static function send($text, $topic, $email, $mail_type) {
+        $mail = self::confMail($mail_type);
         
         $mail->Body = $text;
         $mail->Subject = $topic;
@@ -20,7 +20,7 @@ class Mailer
     /**
      * @return \vendor\phpMailer\PHPMailer 
      */
-    protected static function confMail() {
+    protected static function confMail($mail_type) {
         $mail = new \vendor\phpMailer\PHPMailer;
         $mail->IsSMTP();
         $mail->isHTML();
@@ -30,7 +30,7 @@ class Mailer
         $mail->SMTPAuth   = true;                  // enable SMTP authentication
         $mail->Port       = 587;                    // set the SMTP port for the GMAIL server
         $mail->Username   = "pavel.kruchina@gmail.com"; // SMTP account username example
-        $mail->Password   = Yii::app()->params['mandrillAPIKey'];        // SMTP account password example
+        $mail->Password   = Yii::app()->params['mandrillAPIKey'][$mail_type];        // SMTP account password example
         
         $mail->From = 'info@myby.com.ua';
         $mail->FromName = 'MyBy';
@@ -39,18 +39,18 @@ class Mailer
     }
 
 
-    public static function broadcast($text, $topic, $emails) {
+    public static function broadcast($text, $topic, $emails, $mail_type) {
         foreach ($emails as $email) {
-            self::send($text, $topic, $email);
+            self::send($text, $topic, $email, $mail_type);
         }
         
         return true;
     }
     
-    public static function sendToAllActiveManagers($text, $topic) {
-        $managers = \ShopUserModel::getAllActive();
+    public static function sendToAllActiveManagers($text, $topic, $mail_type, $except=array()) {
+        $managers = \ShopUserModel::getAllActive($except);
         
         $emails = \helpers\DataExtractor::extractColumn($managers, 'mail');
-        static::broadcast($text, $topic, $emails);
+        static::broadcast($text, $topic, $emails, $mail_type);
     }
 }

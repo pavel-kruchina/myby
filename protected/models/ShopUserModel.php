@@ -142,13 +142,19 @@ class ShopUserModel extends CActiveRecord
         return self::model()->findAll($criteria);
     }
     
+    /**
+     * @return ShopUserModel 
+     */
     public static function getById($id) {
         return self::model()->findByPk($id);
     }
     
-    public static function getAllActive() {
+    public static function getAllActive($except=array()) {
         $criteria = new CDbCriteria();
         $criteria->compare("active", 1);
+        
+        if(!empty($except))
+            $criteria->addNotInCondition ('id', $except);
         
         return self::model()->findAll($criteria);
     }

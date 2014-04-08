@@ -125,6 +125,9 @@ class Offer extends CActiveRecord
         return self::model()->findAll($criteria);
     }
     
+    /**
+     * @return Offer
+     */
     public static function getById($id) {
         return self::model()->findByPk($id);
     }
