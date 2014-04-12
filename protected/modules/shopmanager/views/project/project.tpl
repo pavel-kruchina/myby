@@ -18,7 +18,7 @@
      {/if}
      
      {if $added}
-         <div class="message">Спасибо за ваше предложение!</div>
+         <div class="message"><b>Спасибо за ваше предложение!</b></div>
      {/if}
      
     <div class="form add-offer-form">
