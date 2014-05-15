@@ -58,8 +58,6 @@
 
 	<div id="footer">
 		<a href="{Yii::app()->request->baseUrl}/public/about">Как это работает</a> 
-        | <a class="thisPage" target="_blank" href="{Yii::app()->request->baseUrl}/static/buyer.pdf">Покупателям</a>
-        | <a class="thisPage" target="_blank" href="{Yii::app()->request->baseUrl}/static/shop.pdf">Магазинам</a>
         | <a class="thisPage" target="_blank" href="{Yii::app()->request->baseUrl}/static/agreement.pdf">Пользовательское соглашение</a> 
         | <a href="{Yii::app()->request->baseUrl}/public/contacts">Контакты</a> 
         

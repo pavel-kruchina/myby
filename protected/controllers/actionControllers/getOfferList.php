@@ -21,8 +21,8 @@ class getOfferList extends Controller
         return array('projects'=>$projects);
     }
     
-    public static function getUserList($userId) {
-        $projects = Project::getActiveRecordsForUserId($userId);
+    public static function getUserList($userId, $page=0) {
+        $projects = Project::getActiveRecordsForUserId($userId, $page);
         return array('projects'=>$projects);
     }
     

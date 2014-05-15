@@ -26,11 +26,11 @@ class MylistController extends Controller
     public function actionIndex()
 	{
         $page = (int)$_GET['page'];
-        $data = \actionControllers\getOfferList::getUserListSmallPortion(Yii::app()->user->getId(), $page);
+        $data = \actionControllers\getOfferList::getUserList(Yii::app()->user->getId(), $page);
         $data['offersCount'] = $this->getOffersCountForProjects($data['projects']['records']);
         $data['page'] = $page;
         $data['add_project'] = (int)$_GET['add_project'];
-        $data['pages'] = \helpers\Paginator::getPageList($data['projects']['count'], $page, OFFERS_ON_PAGE_FEW);
+        $data['pages'] = \helpers\Paginator::getPageList($data['projects']['count'], $page, OFFERS_ON_PAGE);
         $this->render('my_projects', $data);
   
 	}

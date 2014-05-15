@@ -45,9 +45,12 @@ class Project extends BaseModel
         return self::model()->count(array('condition'=>'active=1'));
     }
     
-    static public function getActiveRecordsForUserId($userId) {
-        return self::model()->findAll(array('condition'=>'active=1 and user_id=:uid', 'params'=>array('uid'=>$userId), 
-                                            'order'=>'id desc', 'limit'=>OFFERS_ON_PAGE));
+    static public function getActiveRecordsForUserId($userId, $page) {
+        $criteria = new CDbCriteria();
+        $criteria->addColumnCondition(array('active'=>1, 'user_id'=>$userId));
+        $criteria->order = 'id desc';
+        
+        return self::findWithPagination($criteria, $page, OFFERS_ON_PAGE);
     }
     
     static public function getActiveRecordsForUserIdSmallPortion($userId, $page=0) {

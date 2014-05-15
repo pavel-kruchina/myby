@@ -2,6 +2,7 @@
 
 {block name="extraCSS"}
     <link rel="stylesheet" type="text/css" href="{Yii::app()->request->baseUrl}/css/about.css" />
+    <link rel="stylesheet" type="text/css" href="{Yii::app()->request->baseUrl}/css/add_order.css" />
 {/block}
 
 {block name="content"}
@@ -11,9 +12,8 @@
 </div>
     
     <div class="h-background"><h1>Как это работает</h1></div>
-    <div class="how"><a  href="{Yii::app()->request->baseUrl}/public/add" ><button class="button" style="margin-left: 215px;  margin-top: 190px;">Оставить заказ</button></a></div>
+    <div class="how"></div>
     
-<div class="message">
-<center>Заказ не обязывает Вас к покупке</center>
-</div>
+<div class="h-background"><h1>Оставить заказ</h1></div>
+    {include file='application.modules.public.views.add.add_form'}
 {/block}

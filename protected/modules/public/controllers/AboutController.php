@@ -25,6 +25,10 @@ class AboutController extends Controller
     
     public function actionIndex()
 	{
-        $this->render('about', array());
+        $regform = new \models\forms\UserRegistrationForm();
+        $loginForm =  new \models\forms\UserLogin();
+        $form = new models\forms\AddProject();
+        
+        $this->render('about', array('regform'=>$regform, 'add'=>$form, 'loginForm'=>$loginForm));
 	}
 }
