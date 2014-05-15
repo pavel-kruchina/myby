@@ -1,5 +1,4 @@
 <?php
-header('P3P: CP="NOI ADM DEV COM NAV OUR STP"');
 setlocale(LC_TIME, 'UA');
 
 include('constants.php');
@@ -31,8 +30,9 @@ return array(
 	),
 
 	'modules'=>array(
-		'vk'=>array(),
-        'shopmanager'=>array(),
+		'shopmanager'=>array(),
+        'public'=>array(),
+        'vk'=>array(),
         
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
@@ -56,15 +56,19 @@ return array(
 			'urlFormat'=>'path',
             'showScriptName'=>false,
 			'rules'=>array(
-                '/' => 'site/index',
-                'vk/ajaxprojectspageload/<page:\d+>'=>'vk/ajaxprojectspageload',
-                'vk/index/<page:\d+>'=>'vk',
-                'vk/index'=>'vk',
-                'vk/mylist/<page:\d+>'=>'vk/mylist',
+                '/' => 'public',
+                'public/index/<page:\d+>'=>'public',
+                'public/index'=>'public',
+                'public/mylist/<page:\d+>'=>'public/mylist',
+                'public/ql/<code:\w+>'=>'public/ql',
+                'public/conversation/one/<id:\d+>'=>'public/conversation/one',
+                'public/conversation/index/<page:\d+>'=>'public/conversation/index',
                 
                 'shopmanager/index/<page:\d+>'=>'shopmanager',
                 'shopmanager/index'=>'shopmanager',
                 'shopmanager/myoffers/<page:\d+>'=>'shopmanager/myoffers',
+                'shopmanager/conversation/one/<id:\d+>'=>'shopmanager/conversation/one',
+                'shopmanager/conversation/index/<page:\d+>'=>'shopmanager/conversation/index',
                 
                 
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

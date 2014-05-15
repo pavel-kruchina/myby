@@ -24,14 +24,15 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"></div>
+		<a href="{Yii::app()->request->baseUrl}/shopmanager"><div id="logo"></div></a>
 	</div><!-- header -->
 
 	<div id="mainmenu">
 		{$this->widget('zii.widgets.CMenu',[
 			'items'=>[
-				['label'=>'Список заказов', 'url'=>['/shopmanager/index']],
                 ['label'=>'Мои предложения', 'url'=>['/shopmanager/myoffers']],
+                ['label'=>'Моя переписка', 'url'=>['/shopmanager/conversation'], 'linkOptions'=>['id'=>'menu-messages']],
+                ['label'=>'Все заказы', 'url'=>['/shopmanager/index']],
 				['label'=>'Вход', 'url'=>['/shopmanager/login'], 'visible'=>Yii::app()->user->isGuest],
 				['label'=>'Выход', 'url'=>['/shopmanager/logout'], 'visible'=>!Yii::app()->user->isGuest]
 			]
@@ -39,6 +40,10 @@
         
         {if !Yii::app()->user->isGuest}
             <div class="user-info">Вы вошли как {Yii::app()->user->getUserData()->name}</div>
+        {/if}
+        
+        {if Conversation::isUnreadConversationForShopUserId(Yii::app()->user->getId())}
+            <script>$('#menu-messages').addClass('new-messages')</script>
         {/if}
 	</div><!-- mainmenu -->
 	<div class="main-content">

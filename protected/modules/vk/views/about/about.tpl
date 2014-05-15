@@ -6,13 +6,13 @@
 
 {block name="content"}
 <div class="message">
-<h2>Что такое MyBy</h2>
-Скажите нам, что Вы хотите купить, и менеджеры разных магазинов подберут для Вас персональные предложения на самых выгодных условиях
+<h2>Мы открылись!</h2>
+Теперь мы принимаем заказы на <a target="_top" href="http://myby.com.ua">myby.com.ua</a>
 </div>
     
     <div class="h-background"><h1>Как это работает</h1></div>
     <div class="how"></div>
-    <a  href="{Yii::app()->request->baseUrl}/vk/add" ><button class="button" style="margin-left: 210px; margin-top: 10px;">Оставить заказ</button></a>
+    <a  href="http://myby.com.ua/public/add" target="_top" ><button class="button" style="margin-left: 210px; margin-top: 10px;">Оставить заказ</button></a>
 <div class="message">
 <center>Заказ не обязывает Вас к покупке</center>
 </div>

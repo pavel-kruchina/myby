@@ -1,0 +1,45 @@
+div.conversation-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+div.message_author {
+    font-weight: bold;
+}
+
+span.message_date {
+    font-weight: normal;
+    font-size: 10px;
+    margin-left: 40px;
+}
+
+div.message_container {
+    margin-bottom: 10px;
+}
+
+div.you-message {
+    color: #060;
+}
+
+div.conversation_container {
+    margin-bottom: 10px;
+}
+
+div.conversation_name {
+    font-weight: bold;
+}
+
+span.conversation_date {
+    font-weight: normal;
+    font-size: 10px;
+    margin-left: 40px;
+}
+
+div.message_unread {
+    background: url('/images/mes2.gif');
+    width: 16px;
+    height: 11px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}

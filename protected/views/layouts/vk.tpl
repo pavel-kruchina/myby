@@ -35,13 +35,11 @@
 		<div id="logo"></div>
         
         <div id="mainmenu">
-            {$this->widget('zii.widgets.CMenu',[
-                'items'=>[
-                    ['label'=>'Все заказы', 'url'=>['/vk/index']],
-                    ['label'=>'Мои заказы', 'url'=>['/vk/mylist']]
-                ]
-            ], true)} 
-            <a href="{Yii::app()->request->baseUrl}/vk/add"><div class="add-order-button">Добавить заказ</div></a>
+            <ul>
+                <li><a href="http://myby.com.ua/public" target="_top">Все заказы</a></li>
+                <li><a href="http://myby.com.ua/public/mylist" target="_top">Мои заказы</a></li>
+            </ul>
+            <a href="http://myby.com.ua/public/add" target="_top"><div class="add-order-button">Добавить заказ</div></a>
         </div><!-- mainmenu -->
 	</div><!-- header -->
 
@@ -55,7 +53,7 @@
         | <a class="thisPage" target="_blank" href="{Yii::app()->request->baseUrl}/static/buyer.pdf">Покупателям</a>
         | <a class="thisPage" target="_blank" href="{Yii::app()->request->baseUrl}/static/shop.pdf">Магазинам</a>
         | <a class="thisPage" target="_blank" href="{Yii::app()->request->baseUrl}/static/agreement.pdf">Пользовательское соглашение</a> 
-        | <a href="{Yii::app()->request->baseUrl}/vk/contacts">Контакты</a> 
+        | <a href="http://myby.com.ua/public/contacts" target="_top" >Контакты</a> 
         
 	</div><!-- footer -->
 

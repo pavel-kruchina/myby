@@ -16,7 +16,11 @@ class AddOfferEvent  extends BaseEvent{
     }
     
     public function sendNotificationToUser(\User $user, \Project $project) {
-        \vendor\vk\vk::sendNotification($user->viewer_id, "По Вашему заказу <".$project->title."> есть новые предложения");
+        $link = \QuickLink::createLink('/public/project/'.$project->id, $user->id);
+        $text = 'По Вашему заказу <a href="http://myby.com.ua/public/'.$link.'"> '.$project->title.' </a> есть новые предложения';
+        $topic = 'Новые предложения на MyBy';
+        $email = $user->mail;
+        \actionControllers\Mailer::send($text, $topic, $email, MAIL_TYPE_NEW_PROJECT);
     }
     
     public function sendNotificationToManagers(\Offer $offer, \Project $project) {
@@ -24,9 +28,9 @@ class AddOfferEvent  extends BaseEvent{
         $concurent = \ShopUserModel::getById($offer->shop_user_id);
         
         $shopUserIds = \helpers\DataExtractor::extractColumn($offers, 'shop_user_id');
-        $text = 'Ваш конкурент <b>'.$concurent->name.'</b> оставил предложение на заказ "'.$project->title.'". <br />
+        $text = 'Магазин <b>'.$concurent->name.'</b> оставил предложение на заказ "'.$project->title.'". <br />
         <a href="http://myby.com.ua/shopmanager/project/'.$project->id.'">Перейти к заказу</a>';
         
-        \actionControllers\Mailer::sendToAllActiveManagers($text, 'Конкурент оставил предложение на заказ', MAIL_TYPE_CONCURENT_ADD_OFFER, $shopUserIds);
+        \actionControllers\Mailer::sendToAllActiveManagers($text, 'оставленно предложение на заказ '.$project->title, MAIL_TYPE_CONCURENT_ADD_OFFER, $shopUserIds);
     }
 }

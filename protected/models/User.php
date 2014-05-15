@@ -12,6 +12,8 @@
  * @property string $last_visit
  * @property string $create_date
  * @property string $extra_data
+ * @property string $mail
+ * @property string $password
  */
 class User extends CActiveRecord
 {
@@ -34,9 +36,12 @@ class User extends CActiveRecord
             array('name, create_date', 'required'),
             array('viewer_id', 'numerical', 'integerOnly'=>true),
             array('name, sname, pname', 'length', 'max'=>255),
+            array('mail', 'length', 'max'=>100),
+            array('mail', 'email'),
+            array('password', 'length', 'max'=>60),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, viewer_id, name, sname, pname, last_visit, create_date, extra_data', 'safe', 'on'=>'search'),
+            array('id, viewer_id, name, sname, pname, last_visit, create_date, extra_data, mail, password', 'safe', 'on'=>'search'),
         );
     }
 
@@ -65,6 +70,8 @@ class User extends CActiveRecord
             'last_visit' => 'Last Visit',
             'create_date' => 'Create Date',
             'extra_data' => 'Extra Data',
+            'mail' => 'Mail',
+            'password' => 'Password',
         );
     }
 
@@ -94,12 +101,13 @@ class User extends CActiveRecord
         $criteria->compare('last_visit',$this->last_visit,true);
         $criteria->compare('create_date',$this->create_date,true);
         $criteria->compare('extra_data',$this->extra_data,true);
+        $criteria->compare('mail',$this->mail,true);
+        $criteria->compare('password',$this->password,true);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
     }
-
     /**
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -131,5 +139,26 @@ class User extends CActiveRecord
         $users = self::model()->findAll($criteria);
         
         return helpers\DataExtractor::transformArrayToColumnIndexedArray($users, 'id');
+    }
+    
+    /**
+     * @return User
+     */
+    public static function getByMail($mail) {
+        $criteria = new CDbCriteria();
+        $criteria->compare("mail", $mail);
+        
+        return self::model()->find($criteria);
+    }
+    
+    public static function getPasswordHash($str) {
+        return sha1($str);
+    }
+    
+    public static function getUsersByIds($ids) {
+        $criteria = new CDbCriteria();
+        $criteria->addInCondition("id", $ids);
+        
+        return self::model()->findAll($criteria);
     }
 }

@@ -52,13 +52,12 @@
     function checkForm() {
         if (!titleEdited) {
             alert('Введите заголовок');
-            
             return false;
         }
         
         if (!describeEdited) {
             alert('Введите описание');
-            
+        
             return false;
         }
         

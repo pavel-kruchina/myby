@@ -10,6 +10,11 @@ class ExtendedForm extends CFormModel
         );*/
     }
     
+    public function autoFill() {
+        $formName = static::transformNameToAlias(get_called_class());
+        $this->attributes = $_POST[$formName];
+    }
+    
     public function fixAttributes() {
         foreach($this->getFixRules() as $frule) {
             $this->applyFixRule($frule);
@@ -29,6 +34,11 @@ class ExtendedForm extends CFormModel
     public function cleanTag($attribute)
 	{
         return strip_tags($attribute);
+	}
+    
+    public function trimStr($attribute)
+	{
+        return trim($attribute);
 	}
     
     protected function magicTags($value) {
@@ -60,5 +70,17 @@ class ExtendedForm extends CFormModel
         $firstPart = substr($value, 0, 15);
         $lastPart = substr($value, -15, 15);
         return $firstPart.'...'.$lastPart;
+    }
+    
+    public static function sent() {
+        $formName = static::transformNameToAlias(get_called_class());
+        if ($_POST[$formName])
+            return true;
+        
+        return false;
+    }
+    
+    protected static function transformNameToAlias($name) {
+        return str_replace('\\', '_', $name);
     }
 }

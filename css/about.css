@@ -8,9 +8,10 @@ div.about-contacts a{
 }
 
 div.how {
-    background: url('/images/how.jpg') no-repeat;
+    background: url('/images/how.png') center top no-repeat;
     width: 576px;
-    height: 178px;
-    margin-left: -10px;
+    height: 210px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 15px;
 }

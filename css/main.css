@@ -322,3 +322,12 @@ h2 {
 .hideRequired .required {
     display: none;
 }
+
+.main-content {
+    padding: 15px;
+}
+
+.new-messages {
+    background: url('/images/mes2.gif') center left no-repeat;
+    padding-left: 18px !important;
+}

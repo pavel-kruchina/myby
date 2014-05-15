@@ -179,7 +179,14 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 
 .form label {
     float: left;
+    text-align: right;
     margin-right: 20px;
+    width: 150px;
+}
+
+div.form .right-side
+{
+	padding-left: 170px;
 }
 
 .width100 {

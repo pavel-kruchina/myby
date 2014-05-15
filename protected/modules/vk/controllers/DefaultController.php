@@ -28,15 +28,15 @@ class DefaultController extends Controller
 	{
         Yii::app()->user->checkUser();
         
-        if($this->isFirstFrame())
+        //if($this->isFirstFrame())
             $this->initialRedirect();
-        
+        /*
         $page = (int)$_GET['page'];
         $data = \actionControllers\getOfferList::getListSmallPortion($page);
         $data['offersCount'] = $this->getOffersCountForProjects($data['projects']['records']);
         $data['page'] = $page;
         $data['pages'] = \helpers\Paginator::getPageList($data['projects']['count'], $page, OFFERS_ON_PAGE_FEW);
-        $this->render('index', $data);
+        $this->render('index', $data);*/
 	}
     
     protected function isFirstFrame() {
@@ -48,10 +48,10 @@ class DefaultController extends Controller
     }
     
     protected function initialRedirect() {
-        $projects = Project::getActiveRecordsForUserId(Yii::app()->user->getId());
+        //$projects = Project::getActiveRecordsForUserId(Yii::app()->user->getId());
         
-        if(count((array)$projects))
-            Yii::app()->request->redirect('/vk/mylist');
+        //if(count((array)$projects))
+            Yii::app()->request->redirect('/vk/about');
     }
         
     protected function getOffersCountForProjects($projects) {

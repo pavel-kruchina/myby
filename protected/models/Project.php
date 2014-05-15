@@ -1,5 +1,5 @@
 <?php
-define('OFFERS_ON_PAGE', 30);
+define('OFFERS_ON_PAGE', 10);
 define('OFFERS_ON_PAGE_FEW', 2);
 /**
  * This is the model class for table "project".
