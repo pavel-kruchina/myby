@@ -1,4 +1,4 @@
-{extends file="layouts/vk.tpl"}
+{extends file="layouts/public.tpl"}
 
 {block name="content"}
      Данный продавец не активен. <br />

@@ -8,8 +8,8 @@ class AddProject extends ExtendedForm
 	
     public function attributeLabels() {
         return array(
-            'title'=>'Укажите тип товара, <br />Ваш бюджет',
-            'describe'=>'Уточните модель <br />и Ваши пожелания'
+            'title'=>'Укажите тип товара, Ваш бюджет',
+            'describe'=>'Уточните модель и Ваши пожелания'
             );
     }
     

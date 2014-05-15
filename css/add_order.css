@@ -2,9 +2,17 @@
     
 }
 
+#add-order-form input{
+    width: 380px;
+}
+
+#add-order-form textarea{
+    width: 380px;
+}
+
 #add-order-form label{
-    width: 150px; float: left;
-    text-align: right;
+    width: auto; float: none;
+    text-align: left;
     padding-right: 10px;
     padding-top: 6px;
     font-weight: normal;
@@ -15,7 +23,8 @@
 }
 
 #add-order-form #submit-button{
-    margin-left: 210px;
+    margin-left: 120px;
+    width: 150px;
 }
 
 h2.add-order {

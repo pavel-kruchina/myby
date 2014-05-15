@@ -1,4 +1,4 @@
-{extends file="layouts/vk.tpl"}
+{extends file="layouts/public.tpl"}
 
 {block name="extraCSS"}
         <link rel="stylesheet" type="text/css" href="{Yii::app()->request->baseUrl}/css/vk-shopuser-about.css" />
