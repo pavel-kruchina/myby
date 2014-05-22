@@ -64,6 +64,8 @@ return array(
                 'public/conversation/one/<id:\d+>'=>'public/conversation/one',
                 'public/conversation/index/<page:\d+>'=>'public/conversation/index',
                 'public/shopuserabout/<id:\d+>'=>'public/shopuserabout',
+                'public/add/<landing:\w+>'=>'public/add',
+                
                 
                 'shopmanager/index/<page:\d+>'=>'shopmanager',
                 'shopmanager/index'=>'shopmanager',

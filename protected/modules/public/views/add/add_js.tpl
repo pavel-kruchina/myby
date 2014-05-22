@@ -20,7 +20,7 @@
         
         $(titleLocator).css('color', '#999');
         $(titleLocator).focus(clearValueTitle);
-        $(titleLocator).val('Например: Кондиционер до 4000 грн');
+        $(titleLocator).val('{$landing.titleExample}');
     }
     
     function initDescribe() {
@@ -31,7 +31,7 @@
         
         $(describeLocator).css('color', '#999');
         $(describeLocator).focus(clearValue);
-        $(describeLocator).val('Например: Кондиционер зима/лето в комнату на 20 квадратов. Желательно с установкой.');
+        $(describeLocator).val('{$landing.textExample}');
     }
     
     function clearValueTitle() {

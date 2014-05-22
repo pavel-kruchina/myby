@@ -5,6 +5,6 @@
 {/block}
 
 {block name="content"}
-    <div class="h-background"><h1>Что Вы хотите купить?</h1></div>
+    <div class="h-background"><h1>{$landing.welcomeText}</h1></div>
     {include file='application.modules.public.views.add.add_form'}
 {/block}
