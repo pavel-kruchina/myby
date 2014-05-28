@@ -10,6 +10,6 @@
     <p>Менеджер: <b>{$shopuser->manager_name}</b></p>
     <p>Телефон: <b>{$shopuser->phone}</b></p>
     <p>Почта: <b>{$shopuser->showed_mail}</b></p>
-    <p>Сайт: <b><a href='{$shopuser->site_url}' target="_blank">{$shopuser->site_name}</a></b></p>
+    <p>Сайт: <b><a href='{$shopuser->site_url}' class="thisPage" target="_blank">{$shopuser->site_name}</a></b></p>
     {$shopuser->describe}
 {/block}
