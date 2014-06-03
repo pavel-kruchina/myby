@@ -107,7 +107,7 @@
     }
     
     function orderSavedEvent() {
-        yaCounter24927764.reachGoal('order placed');
+        yaCounter24927764.reachGoal('order_placed');
     }
     
     function registrationEvent() {
@@ -119,7 +119,7 @@
             return false;
         
         startedWork = true;
-        yaCounter24927764.reachGoal('start make order');
+        yaCounter24927764.reachGoal('start_make_order');
     }
     
     function showLoginErrors() {
