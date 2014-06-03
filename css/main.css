@@ -299,6 +299,7 @@ div.user-info {
     background: url('/images/ask.png') no-repeat;
     width: 36px;
     height: 124px;
+    margin-bottom: 50px;
 }
 
 div.message {

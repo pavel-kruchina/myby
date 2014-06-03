@@ -56,9 +56,9 @@ return array(
 			'urlFormat'=>'path',
             'showScriptName'=>false,
 			'rules'=>array(
-                '/' => 'public',
-                'public/index/<page:\d+>'=>'public',
-                'public/index'=>'public',
+                '/' => 'public/about',
+                'public/index/<page:\d+>'=>'public/about',
+                'public/index'=>'public/about',
                 'public/mylist/<page:\d+>'=>'public/mylist',
                 'public/ql/<code:\w+>'=>'public/ql',
                 'public/conversation/one/<id:\d+>'=>'public/conversation/one',
