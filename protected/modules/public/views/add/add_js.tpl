@@ -5,6 +5,8 @@
     var titleEdited = 0;
     var describeEdited = 0;
     var needRegister = 0;
+    var startedWork = false;
+    
     
     $('document').ready(initTitle);
     $('document').ready(initDescribe);
@@ -40,6 +42,8 @@
         this.value = '';
         this.style.color = 'black';
         $('#'+this.id).unbind('focus');
+        
+        startWorkWithFormEvent();
     }
     
     function clearValue() {
@@ -49,6 +53,7 @@
         this.style.color = 'black';
         $('#'+this.id).unbind('focus');
         
+        startWorkWithFormEvent();
     }
     
     function checkForm() {
@@ -70,7 +75,7 @@
         }
         
         $("#submit-button").prop('disabled', true);
-        
+        orderSavedEvent();
         return true;
     }
     
@@ -83,6 +88,8 @@
             
             return false;
         }
+        
+        registrationEvent()
         
         needRegister = 0;
         $(formLocator).submit();
@@ -97,6 +104,22 @@
         
         needRegister = 0;
         $(formLocator).submit();
+    }
+    
+    function orderSavedEvent() {
+        yaCounter24927764.reachGoal('order placed');
+    }
+    
+    function registrationEvent() {
+        yaCounter24927764.reachGoal('registration');
+    }
+    
+    function startWorkWithFormEvent() {
+        if (startedWork)
+            return false;
+        
+        startedWork = true;
+        yaCounter24927764.reachGoal('start make order');
     }
     
     function showLoginErrors() {
