@@ -57,8 +57,8 @@ return array(
             'showScriptName'=>false,
 			'rules'=>array(
                 '/' => 'public/about',
-                'public/index/<page:\d+>'=>'public/about',
-                'public/index'=>'public/about',
+                'public/index/<page:\d+>'=>'public',
+                'public/index'=>'public',
                 'public/mylist/<page:\d+>'=>'public/mylist',
                 'public/ql/<code:\w+>'=>'public/ql',
                 'public/conversation/one/<id:\d+>'=>'public/conversation/one',
