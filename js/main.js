@@ -20,5 +20,3 @@ function showLoading() {
     */
     $('.loading').removeClass('hidden');
 }
-
-$('document').ready(function(){$('a:not(.thisPage):not(.ui-dialog-titlebar-close)').live('click', showLoading); });

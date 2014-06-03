@@ -297,9 +297,6 @@ div.user-info {
 
 #askButton {
     background: url('/images/ask.png') no-repeat;
-    position: fixed;
-    right:0px;
-    top: 40%;
     width: 36px;
     height: 124px;
 }
@@ -330,4 +327,19 @@ h2 {
 .new-messages {
     background: url('/images/mes2.gif') center left no-repeat;
     padding-left: 18px !important;
+}
+
+.likes-area{
+    width: 25px;
+}
+.right-area {
+    position:fixed;
+    right: 0px;
+    top: 20%;
+}
+
+.likes-area .b-share-btn__wrap{
+    width: 25px;
+    margin-left: 0px !important;
+    margin-top:5px;
 }

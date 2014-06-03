@@ -65,6 +65,13 @@
 
 </div><!-- page -->
 <div class="loading hidden"></div>
-<a target="_blank" class="thisPage" href="http://vk.com/myby4every1"><div id="askButton"></div></a>
+<div class="right-area">
+    <a target="_blank" class="thisPage" href="http://vk.com/myby4every1"><div id="askButton"></div></a>
+    <script type="text/javascript" src="//yandex.st/share/share.js"
+    charset="utf-8"></script>
+    <div class="likes-area yashare-auto-init" data-yashareL10n="ru"
+     data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter">
+    </div> 
+</div>
 </body>
 </html>
