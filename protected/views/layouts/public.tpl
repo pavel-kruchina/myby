@@ -31,7 +31,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<a href="{Yii::app()->request->baseUrl}/public"><div id="logo"></div></a>
+		<a href="{Yii::app()->request->baseUrl}/public/about"><div id="logo"></div></a>
         
         <div id="mainmenu">
             {$this->widget('zii.widgets.CMenu',[

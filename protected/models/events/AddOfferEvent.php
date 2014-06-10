@@ -31,6 +31,6 @@ class AddOfferEvent  extends BaseEvent{
         $text = 'Магазин <b>'.$concurent->name.'</b> оставил предложение на заказ "'.$project->title.'". <br />
         <a href="http://myby.com.ua/shopmanager/project/'.$project->id.'">Перейти к заказу</a>';
         
-        \actionControllers\Mailer::sendToAllActiveManagers($text, 'оставленно предложение на заказ '.$project->title, MAIL_TYPE_CONCURENT_ADD_OFFER, $shopUserIds);
+        \actionControllers\Mailer::sendToAllActiveManagers($text, 'Оставленно предложение на заказ '.$project->title, MAIL_TYPE_CONCURENT_ADD_OFFER, $shopUserIds);
     }
 }

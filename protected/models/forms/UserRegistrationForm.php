@@ -17,7 +17,7 @@ class UserRegistrationForm extends ExtendedForm
     public function attributeLabels() {
         return array(
             'mail'=>'Почта (e-mail)',
-            'password'=>'Пароль',
+            'password'=>'Придумайте пароль',
             'name'=>'Имя',
             'sname'=>'Фамилия',
             );

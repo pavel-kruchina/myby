@@ -69,9 +69,9 @@ class RegController extends Controller
     }
     
     protected function createTextForRegLetter(models\forms\UserRegistrationForm $form, User $user) {
-        $text = 'Спасибо за регистрацию на MyBy. Ваш пароль: '.$form->password;
-        $qlink = QuickLink::createLink('/public/index', $user->id);
-        $text .= '<br /> Вы также можете зайти, использая эту ссылку - <a href="http://myby.com.ua/public'.$qlink.'">вход</a>';
+        $text = $user->name.', cпасибо за регистрацию на MyBy! Ваш пароль: '.$form->password;
+        $qlink = 'http://myby.com.ua/public/'.(QuickLink::createLink('/public/mylist', $user->id));
+        $text .= '<br /> Вы также можете войти на сайт, пройдя по этой ссылке <a href="'.$qlink.'">'.$qlink.'</a>';
         
         return $text;
     }
